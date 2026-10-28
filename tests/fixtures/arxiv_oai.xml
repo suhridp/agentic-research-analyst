@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/">
+  <GetRecord><record><metadata>
+    <arXiv xmlns="http://arxiv.org/OAI/arXiv/">
+      <id>2301.01234</id>
+      <license>http://creativecommons.org/licenses/by/4.0/</license>
+    </arXiv>
+  </metadata></record></GetRecord>
+</OAI-PMH>

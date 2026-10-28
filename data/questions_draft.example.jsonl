@@ -1,0 +1,4 @@
+{"id": "q001", "type": "numeric", "question": "By how much did <method> reduce handover failures in <setting>?"}
+{"id": "q002", "type": "comparison", "question": "How do <paper A> and <paper B> differ in the handover failure rates they report under high mobility?"}
+{"id": "q003", "type": "gap", "question": "Which attack vectors on conditional handover are not evaluated in any of the papers?"}
+{"id": "q004", "type": "unanswerable", "question": "What energy overhead does <defense> add at the base station?"}

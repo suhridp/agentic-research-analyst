@@ -1,0 +1,18 @@
+# Same experiment with a small model, for iterating on prompts cheaply. Don't report these numbers
+# as the main result. To use a local open-weight model instead, see the commented block.
+name: dev_cheap
+corpus: {path: data/corpus, max_words: 160, overlap: 1}
+questions: data/questions.jsonl
+split: dev
+llm: {provider: anthropic, model: claude-haiku-5-5, temperature: 0, max_cost_usd: 3}
+# llm: {provider: openai_compat, base_url: "http://localhost:11434/v1", model: "qwen2.5:7b-instruct", temperature: 0}
+judge: {provider: anthropic, model: claude-sonnet-5-5, temperature: 0, max_cost_usd: 3}
+prices: configs/prices.yaml
+workers: 4
+reference: agentic_full
+defaults:
+  k: 5
+  retriever: {kind: hybrid, encoder: auto, rerank: auto}
+systems:
+  - {name: bm25_rag, kind: rag, retriever: {kind: bm25, rerank: null}}
+  - {name: agentic_full}

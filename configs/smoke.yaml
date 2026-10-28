@@ -1,0 +1,19 @@
+# Offline smoke test on the SYNTHETIC fixture corpus. Runs in seconds with no API key.
+# It checks that every system and metric runs end to end. Its numbers are NOT results.
+name: smoke
+corpus: {path: data/synthetic, max_words: 160, overlap: 1}
+questions: data/synthetic_questions.jsonl
+split: dev
+llm: null            # offline heuristics
+judge: lexical
+reference: agentic_full
+defaults:
+  retriever: {kind: bm25}
+  k: 5
+systems:
+  - {name: bm25_rag, kind: rag}
+  - {name: hybrid_rerank_rag, kind: rag, retriever: {kind: hybrid, encoder: auto, rerank: auto}}
+  - {name: agentic_full, retriever: {kind: hybrid, encoder: auto, rerank: auto}}
+  - {name: no_planner, planner: false, retriever: {kind: hybrid, encoder: auto, rerank: auto}}
+  - {name: no_verifier, verifier: none, retriever: {kind: hybrid, encoder: auto, rerank: auto}}
+  - {name: no_critic, critic: false, retriever: {kind: hybrid, encoder: auto, rerank: auto}}

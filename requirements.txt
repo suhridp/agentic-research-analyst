@@ -1,0 +1,6 @@
+# Core runtime (offline mode works with only these). Versions verified together.
+numpy==2.5.3
+scikit-learn==1.9.1
+pydantic==2.13.5
+PyYAML==6.0.3
+pdfplumber==0.11.10

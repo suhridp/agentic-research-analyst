@@ -1,0 +1,11 @@
+# Offline retrieval smoke test on the synthetic fixture (LSA and lexical stand-ins). Not a result.
+name: retrieval_smoke
+corpus: {path: data/synthetic}
+questions: data/synthetic_questions.jsonl
+split: dev
+ks: [1, 3, 5]
+retrievers:
+  - {name: bm25, kind: bm25}
+  - {name: dense_lsa, kind: dense, encoder: lsa}
+  - {name: hybrid_lsa, kind: hybrid, encoder: lsa}
+  - {name: hybrid_lsa_lexrerank, kind: hybrid, encoder: lsa, rerank: lexical}

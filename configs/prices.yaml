@@ -1,0 +1,7 @@
+# USD per million tokens. FILL THESE IN from the provider's current pricing page before a paid run;
+# prices change and are deliberately not hard-coded. Models missing here are run with cost = 0 and
+# only the token cap (max_tokens) enforces the budget.
+models: {}
+#  claude-sonnet-5-5: {input: 0.0, output: 0.0}
+#  claude-opus-5-5:   {input: 0.0, output: 0.0}
+#  claude-haiku-5-5:  {input: 0.0, output: 0.0}
